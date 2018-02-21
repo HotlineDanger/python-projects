@@ -1,7 +1,7 @@
 import pygame.font
 from pygame.sprite import Group
 
-from ship import Ship
+from modules.ship import Ship
 
 class Scoreboard():
     """ A class to report the scoring information. """
@@ -71,12 +71,12 @@ class Scoreboard():
         # Draw ships.
         self.ships.draw(self.screen)
 
-    def prep_ships():
+    def prep_ships(self):
         """ Show how many ships are left. """
         self.ships = Group() # Empty group to hold the ships instance
 
         for ship_number in range(self.stats.ships_left):
-            ship = Ship(self.ai_settings, self.screen)
+            ship = Ship(self.screen, self.ai_settings)
             ship.rect.x = 10 + ship_number * ship.rect.width
             ship.rect.y = 10
             self.ships.add(ship)

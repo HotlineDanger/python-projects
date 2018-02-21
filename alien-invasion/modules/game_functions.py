@@ -1,8 +1,9 @@
 import sys
 import pygame
-from bullet import Bullet
-from alien import Alien
 from time import sleep
+
+from modules.bullet import Bullet
+from modules.alien import Alien
 
 def check_events(ai_settings, screen, stats, sb, start_button, ship, aliens, bullets):
     """ Responds to keypresses and mouse events """

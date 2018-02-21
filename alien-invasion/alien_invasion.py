@@ -1,12 +1,12 @@
 import pygame
-import game_functions as gf
-
-from settings import Settings
-from ship import Ship
 from pygame.sprite import Group
-from game_stats import GameStats
-from scoreboard import Scoreboard
-from button import Button
+
+import modules.game_functions as gf
+from modules.settings import Settings
+from modules.ship import Ship
+from modules.game_stats import GameStats
+from modules.scoreboard import Scoreboard
+from modules.button import Button
 
 def run_game():
     #Initialize game and create a screen object.
