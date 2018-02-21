@@ -1,2 +1,2 @@
 # data-visualization
-A shot at python data viz
+A shot at python data viz using matplotlib
