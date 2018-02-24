@@ -6,7 +6,13 @@ import matplotlib.pyplot as plt
 x_values = list(range(1, 1001))
 y_values = [x ** 2 for x in x_values]
 
-plt.scatter(x_values, y_values, s = 10, edgecolor = "none")
+# c is the color of the dot you
+# A colormap is a series of colors in a gradient that moves from a starting to
+# ending color. Colormaps are used in visualizations to emphasize a pattern
+# in the data. For example, you might make low values a light color and high
+# values a darker color.
+# plt.scatter(x_values, y_values, c = (0, 0, 0.8), edgecolor = "none", s = 10)
+plt.scatter(x_values, y_values, c = y_values, cmap = plt.cm.Blues, edgecolor = "none", s = 10)
 
 # Set chart title and axis labels
 plt.title("Square Numbers", fontsize = 24)
