@@ -3,8 +3,12 @@ import matplotlib.pyplot as plt
 # x_values = [1, 2, 3, 4, 5]
 # y_values = [1, 4, 9, 16, 25]
 # Loop for generating data
-x_values = list(range(1, 1001))
-y_values = [x ** 2 for x in x_values]
+
+x_values = list(range(1, 5001))
+y_values = [x ** 2 for x in x_values] # squared numbers from the 5000 first items.
+
+# x_values = list(range(1, 5001))
+# y_values = [x ** 3 for x in x_values] # cubic numbers from the 5000 first items. Need to change c = y_values for (0, 0, 0.8) otherwise it won't print
 
 # c is the color of the dot you
 # A colormap is a series of colors in a gradient that moves from a starting to
