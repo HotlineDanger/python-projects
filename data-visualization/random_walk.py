@@ -29,6 +29,9 @@ class RandomWalk():
 
             y_direction = choice([1, -1])
             y_distance = choice([0, 1, 2, 3, 4])
+            # A positive result for y_step means move up, negative
+            # means move down, and 0 means move horizontally. If the value of both
+            # x_step and y_step are 0, the walk stops, but we continue the loop to prevent this
             y_step = y_direction * y_distance
 
             # Reject moves that go nowhere
@@ -36,8 +39,11 @@ class RandomWalk():
                 continue
 
             # calculate the next x and y values
+            # To get the next x-value for our walk, we add the value in x_step to the
+            # last value stored in x_values and do the same for the y-values
             next_x = self.x_values[-1] + x_step
             next_y = self.y_values[-1] + y_step
 
+            # Once we have these values, we append them to x_values and y_values.
             self.x_values.append(next_x)
             self.y_values.append(next_y)
