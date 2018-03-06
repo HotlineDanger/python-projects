@@ -16,7 +16,10 @@ while True:
     rw.fill_walk()
 
     # Set the size of the plotting window so it fits nicely on the screen.
-    plt.figure(figsize = (10, 6))
+    # The figure() function controls the width, height, resolution, and background
+    # color of the plot. The figsize parameter takes a tuple, which tells
+    # matplotlib the dimensions of the plotting window in inches.
+    plt.figure(dpi = 128, figsize = (10, 6))
 
     point_numbers = list(range(rw.num_points))
     # Coloring the points

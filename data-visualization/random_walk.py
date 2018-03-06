@@ -21,7 +21,7 @@ class RandomWalk():
         # Keep taking steps until the walk reaches the desired length
         while len(self.x_values) < self.num_points:
             # Decide which direction to go and how far to go in that direction
-            # We use choice([1, -1]) to choose a value for x_direction, 
+            # We use choice([1, -1]) to choose a value for x_direction,
             # which returns either 1 for right movement or '-1' for left
             x_direction = choice([1, -1])
             # Next, choice([0, 1, 2, 3, 4]) tells Python how far to move in that direction (x_distance) by randomly selecting an integer between 0 and 4.
