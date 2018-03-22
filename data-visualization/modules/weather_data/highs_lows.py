@@ -10,7 +10,7 @@ with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
 
-    dates, highs = [], []
+    dates, highs, lows = [], [], []
     for row in reader:
         current_date = datetime.strptime(row[0], '%Y-%m-%d')
         dates.append(current_date)
@@ -18,15 +18,19 @@ with open(filename) as f:
         high = int(row[1])
         highs.append(high)
 
+        low = int(row[3])
+        lows.append(low)
+
 # for index, column_header in enumerate(header_row):
 #     print(index, column_header)
 
  # Plot data.
 fig = plt.figure(dpi = 128, figsize = (10, 6))
 plt.plot(dates, highs, c = 'red')
+plt.plot(dates, lows, c = 'blue')
 
 # Format plot.
-plt.title('Daily high temperatures - 2014', fontsize = 24)
+plt.title('Daily high and low temperatures - 2014', fontsize = 24)
 # plt.title('Daily high temperatures, July 2014', fontsize = 24)
 plt.xlabel('', fontsize = 16)
 fig.autofmt_xdate()
