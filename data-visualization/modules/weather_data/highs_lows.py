@@ -26,8 +26,12 @@ with open(filename) as f:
 
  # Plot data.
 fig = plt.figure(dpi = 128, figsize = (10, 6))
-plt.plot(dates, highs, c = 'red')
-plt.plot(dates, lows, c = 'blue')
+# alpha parameter is there to make the lines appear lighter
+plt.plot(dates, highs, c = 'red', alpha = 0.5)
+plt.plot(dates, lows, c = 'blue', alpha = 0.5)
+
+# we shade the difference between highs and lows
+plt.fill_between(dates, highs, lows, facecolor = 'blue', alpha = 0.1)
 
 # Format plot.
 plt.title('Daily high and low temperatures - 2014', fontsize = 24)
