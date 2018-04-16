@@ -14,17 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+# from django.urls import path, include
+from django.conf.urls import url, include
 
 urlpatterns = [
-    path(r'^admin/', include(admin.site.urls)),
-    path(r'', include('learning_logs.urls', namespace='learning_logs')),
+    url(r'^admin/', admin.site.urls),
+    url(r'', include('learning_logs.urls')),
 ]
 
-"""
-Namespace argument allows us to distinguish
-learning_logs’s URLs from other URLs that might appear in the project,
-which can be very helpful as your project starts to grow.
-The default urls.py is in the learning_log folder; now we need to make a
-second urls.py file in the learning_logs folder:
-"""
+
+# Namespace argument allows us to distinguish
+# learning_logs’s URLs from other URLs that might appear in the project,
+# which can be very helpful as your project starts to grow.
+# The default urls.py is in the learning_log folder; now we need to make a
+# second urls.py file in the learning_logs folder:
