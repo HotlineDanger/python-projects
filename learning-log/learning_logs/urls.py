@@ -7,6 +7,9 @@ from . import views
 urlpatterns = [
     # Home page
     url(r'^$', views.index, name='index'),
+
+    # Show all topics
+    url(r'^topic/$', views.topics, name='topics'),
 ]
 # The r tells Python to interpret the following string as a raw string, and the quotes tell Python where the regular expression begins and ends. The caret (^) tells Python to
 # find the beginning of the string, and the dollar sign tells Python to look for the end of the string. In its entirety, this expression tells Python to look for a URL with
