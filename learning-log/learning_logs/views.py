@@ -18,3 +18,12 @@ def topics(request):
     # in topics. At x we define a context that we’ll send to the template. A context is a dictionary in which the keys are names we’ll use in the template to access
     # the data and the values are the data we need to send to the template. In this case, there’s one key-value pair, which contains the set of topics we’ll display
     # on the page. When building a page that uses data, we pass the context variable to render() as well as the request object and the path to the template y.
+
+def topic(request, topic_id):
+    """ Show a single topic and all its entries. """
+    topic = Topic.objects.get(id = topic_id)
+    entries = topic.entry_set.order_by('-date_added') # - to sort in reverse order
+    context = {'topic': topic, 'entries': entries}
+
+    return render(request, 'learning_logs/topic.html', context)
+    # The function accepts the value captured by the expression (?P<topic_id>\d+) and stores it in topic_id
