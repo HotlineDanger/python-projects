@@ -19,10 +19,11 @@ urlpatterns = [
     url(r'^topics/(?P<topic_id>\d+)/$', views.topic, name='topic'),
 
     # Page for adding a new topic
-    url(r'^new_topic/$', views.new_topic, name='new_topic')
+    url(r'^new_topic/$', views.new_topic, name='new_topic'),
 
-    # The r tells Django to interpret the string as a raw string, and the expression is contained in quotes. The second part of the
-    # expression, /(?P<topic_id>\d+)/, matches an integer between two forward slashes and stores the integer value in an argument called topic_id. The
-    # parentheses surrounding this part of the expression captures the value stored in the URL; the ?P<topic_id> part stores the matched value in
-    # topic_id; and the expression \d+ matches any number of digits that appear between the forward slashes. When Django finds a URL
+    # Page for adding a new entry
+    url(r'^new_entry/(P<topic_id>\d+)/$', views.new_entry, name='new_entry')
+    # This URL pattern matches any URL with the form http://localhost:8000/new_entry/id/, where id is a number matching the topic ID.
+    # The code (?P<topic_id>\d+) captures a numerical value and stores it in the variable topic_id.
+
 ]
