@@ -16,7 +16,7 @@ urlpatterns = [
     # nothing between the beginning and end of the URL. Python ignores the base URL for the project (http://localhost:8000/), so an empty regular expression matches the base URL
 
     # Detail page for a single topic
-    url(r'^topics/(?P<topic_id>\d+)/$', views.topic, name='topic')
+    url(r'^topics/(?P<topic_id>\d+)/$', views.topic, name='topic'),
 
     # Page for adding a new topic
     url(r'^new_topic/$', views.new_topic, name='new_topic')
