@@ -41,7 +41,7 @@ def new_topic(request):
         form = TopicForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('learning_logs:topics'))
+            return HttpResponseRedirect(reverse('topics'))
             # The reverse() function determines the URL from a named URL pattern, meaning that
             # Django will generate the URL when the page is requested. We also import the form we just wrote, TopicForm.
 
