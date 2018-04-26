@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^new_topic/$', views.new_topic, name='new_topic'),
 
     # Page for adding a new entry
-    url(r'^new_entry/(P<topic_id>\d+)/$', views.new_entry, name='new_entry')
+    url(r'^new_entry/(?P<topic_id>\d+)/$', views.new_entry, name='new_entry')
     # This URL pattern matches any URL with the form http://localhost:8000/new_entry/id/, where id is a number matching the topic ID.
     # The code (?P<topic_id>\d+) captures a numerical value and stores it in the variable topic_id.
 
