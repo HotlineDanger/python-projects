@@ -20,3 +20,12 @@ learning_logs, and tell Django to migrate the project '''
 
 ### http://localhost:8000/admin/ to access the admin page
 ''' Now use the superuser account to access the admin site. Go to http://localhost:8000/admin/ '''
+
+### (ll_env)learning_log$ python manage.py startapp users
+### (ll_env)learning_log$ ls
+### u db.sqlite3 learning_log learning_logs ll_env manage.py users
+### (ll_env)learning_log$ ls users
+### v admin.py __init__.py migrations models.py tests.py views.py
+''' For creating new users. We’ll start by creating a new app called users, using the startapp command:
+This command makes a new directory called users u with a structure
+identical to the learning_logs app '''
