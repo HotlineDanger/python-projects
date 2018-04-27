@@ -19,11 +19,10 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^users/', include('users.urls')),
     url(r'', include('learning_logs.urls')),
 ]
 
-
-# Namespace argument allows us to distinguish
 # learning_logs’s URLs from other URLs that might appear in the project,
 # which can be very helpful as your project starts to grow.
 # The default urls.py is in the learning_log folder; now we need to make a
