@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # My apps
-    'learning_logs'
+    'learning_logs',
+    'users' # users accounts and access
 ]
 
 MIDDLEWARE = [
