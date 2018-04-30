@@ -2,7 +2,7 @@
   <a href="{% url 'index' %}">Learning Log</a> -
   <a href="{% url 'topics' %}">Topics</a> -
   {% if user.is_authenticated %}
-    Hello, {{ username }}
+    Hello, {{ user.username }}
   {% else %}
     <a href="{% url 'login' %}">log in</a>
   {% endif %}
