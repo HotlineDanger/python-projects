@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
@@ -10,6 +11,11 @@ def index(request):
     ''' Homepage for learning_logs. '''
     return render(request, 'learning_logs/index.html')
 
+@login_required
+# We apply login_required() as a decorator to the topics() view function by prepending login_required
+# with the @ symbol so Python knows to run the code in login_required() before the code in topics().
+# The code in login_required() checks to see if a user is logged in, and Django will run the code in
+# topics() only if they are. If the user is not logged in, they’re redirected to the login page.
 def topics(request):
     """ Show all topics. """
     topics = Topic.objects.order_by('date_added')
