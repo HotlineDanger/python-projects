@@ -4,12 +4,12 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 
-def logout(request):
+def logout_view(request):
     """ Log the user out. """
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
-def register():
+def register(request):
     """ Register a new user. """
     if request.method != 'POST':
         # Display a blank registration form
