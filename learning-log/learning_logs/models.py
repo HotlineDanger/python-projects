@@ -1,9 +1,12 @@
 from django.db import models
 
+from django.contrib.auth.models import User
+
 class Topic(models.Model):
     ''' A topic the user is learning about. '''
     text = models.CharField(max_length = 200) #  telling that text is a Charfield type. piece of data made up of characters. 200 characters is how much space we want it to take in the DB.
     date_added = models.DateTimeField(auto_now_add = True) # piece of data that wiull record date and time. auto_now_add set this attribute to the current date and time whenever the user creates a new topic
+    owner = models.ForeignKey(User, on_delete = models.DO_NOTHING) # Connecting Data to Certain Users
 
     def __str__(self):
         ''' Return a string representation of the model. '''
@@ -15,10 +18,7 @@ class Topic(models.Model):
 
 class Entry(models.Model):
     ''' Something specific we learned about the topic. '''
-    topic = models.ForeignKey(
-        Topic,
-        on_delete = models.DO_NOTHING
-    )
+    topic = models.ForeignKey(Topic, on_delete = models.DO_NOTHING)
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add = True)
 
