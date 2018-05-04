@@ -28,6 +28,7 @@ def topics(request):
     # the data and the values are the data we need to send to the template. In this case, there’s one key-value pair, which contains the set of topics we’ll display
     # on the page. When building a page that uses data, we pass the context variable to render() as well as the request object and the path to the template y.
 
+@login_required
 def topic(request, topic_id):
     """ Show a single topic and all its entries. """
     topic = Topic.objects.get(id = topic_id)
@@ -37,6 +38,7 @@ def topic(request, topic_id):
     return render(request, 'learning_logs/topic.html', context)
     # The function accepts the value captured by the expression (?P<topic_id>\d+) and stores it in topic_id
 
+@login_required
 def new_topic(request):
     """ Add a new topic. """
     if request.method != 'POST':
@@ -55,6 +57,7 @@ def new_topic(request):
     context = { 'form': form }
     return render(request, 'learning_logs/new_topic.html', context)
 
+@login_required
 def new_entry(request, topic_id):
     """ Add a new entry for a particular topic. """
     topic = Topic.objects.get(id = topic_id)
@@ -76,6 +79,7 @@ def new_entry(request, topic_id):
     context = { 'topic': topic, 'form': form }
     return render(request, 'learning_logs/new_entry.html', context)
 
+@login_required
 def edit_entry(request, entry_id):
     """ Edit an existing entry. """
     entry = Entry.objects.get(id = entry_id)
