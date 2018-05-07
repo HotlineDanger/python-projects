@@ -18,7 +18,7 @@ def index(request):
 # topics() only if they are. If the user is not logged in, they’re redirected to the login page.
 def topics(request):
     """ Show all topics. """
-    topics = Topic.objects.order_by('date_added')
+    topics = Topic.objects.filter(owner = request.user).order_by('date_added')
     context = {'topics': topics}
 
     return render(request, 'learning_logs/topics.html', context)
