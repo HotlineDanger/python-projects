@@ -51,7 +51,10 @@ def new_topic(request):
         # POST data submitted; process data
         form = TopicForm(request.POST)
         if form.is_valid():
-            form.save()
+            #save the new topic tying it to the right owner
+            new_topic = form.save(commit = False)
+            new_topic.owner = request.user
+            new_topic.save()
 
             return HttpResponseRedirect(reverse('topics'))
             # The reverse() function determines the URL from a named URL pattern, meaning that
