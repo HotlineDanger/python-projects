@@ -29,3 +29,9 @@ learning_logs, and tell Django to migrate the project '''
 ''' For creating new users. We’ll start by creating a new app called users, using the startapp command:
 This command makes a new directory called users u with a structure
 identical to the learning_logs app '''
+
+# python manage.py shell
+# >>> from learning_logs.models import Topic
+# >>> for topic in Topic.objects.all():
+# ... print(topic, topic.owner)
+'''Print the topics with their associated owner'''
