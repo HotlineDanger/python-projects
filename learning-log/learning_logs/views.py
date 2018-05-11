@@ -78,7 +78,7 @@ def new_entry(request, topic_id):
         if form.is_valid():
             new_entry = form.save(commit = False)
             new_entry.topic = topic
-            mew_entry.save()
+            new_entry.save()
 
             return HttpResponseRedirect(reverse('topic', args=[topic_id]))
 
