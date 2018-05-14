@@ -35,3 +35,8 @@ identical to the learning_logs app '''
 # >>> for topic in Topic.objects.all():
 # ... print(topic, topic.owner)
 '''Print the topics with their associated owner'''
+
+# (ll_env)learning_log$ pip freeze > requirements.txt
+'''The freeze command tells pip to write the names of all the packages
+currently installed in the project into the file requirements.txt. Open
+requirements.txt to see the packages and version numbers installed'''
