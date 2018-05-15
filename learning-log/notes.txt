@@ -1,3 +1,17 @@
+### pip install --user virtualenv
+''' Installing virtualenv '''
+
+###  python -m venv ll_env
+'''Create a new directory for your project called learning_log, switch to
+that directory in a terminal, and create a virtual environment.'''
+
+### source ll_env/bin/activate
+''' Now that we have a virtual environment set up, we need to activate it with
+the following command: '''
+
+### deactivate
+''' To stop using a virtual environment, enter deactivate: '''
+
 ### python manage.py runserver
 ''' Run the django python server '''
 
