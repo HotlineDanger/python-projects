@@ -132,3 +132,26 @@ LOGIN_URL = '/users/login'
 BOOTSTRAP3 = {
     'include_jquery': True,
 }
+
+# Heroku settings
+# In a Heroku deployment, the directory is always /app
+# The if test ensures that the settings in this block apply only when the project is deployed on Heroku.
+# This structure allows us to have one settings file that works for our local development environment as well as the live server.
+if os.getcwd() == '/app':
+    # we import dj_database_url to help configure the database on Heroku. Heroku uses PostgreSQL (also called Postgres), a more advanced
+    # database than SQLite, and these settings configure the project to use Postgres on Heroku. The rest of the settings support HTTPS requests,
+    # ensure that Django will serve the project from Heroku’s URL, and set up the project to serve static files correctly on Heroku.
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default='postgres://localhost')
+    }
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure().
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # Allow all host headers.
+    ALLOWED_HOSTS = ['*']
+    # Static asset configuration
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = 'staticfiles'
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
