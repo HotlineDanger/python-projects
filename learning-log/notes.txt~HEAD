@@ -1,3 +1,17 @@
+### pip install --user virtualenv
+''' Installing virtualenv '''
+
+###  python -m venv ll_env
+'''Create a new directory for your project called learning_log, switch to
+that directory in a terminal, and create a virtual environment.'''
+
+### source ll_env/bin/activate
+''' Now that we have a virtual environment set up, we need to activate it with
+the following command: '''
+
+### deactivate
+''' To stop using a virtual environment, enter deactivate: '''
+
 ### python manage.py runserver
 ''' Run the django python server '''
 
@@ -8,7 +22,8 @@ defined. The output here shows that Django has created a migration file
 called 0001_initial.py. This migration will create a table for the model Topic
 in the database. Now we’ll apply this migration and have Django modify the database
 for us:'''
-### python mananage.py migrate
+
+### python manage.py migrate
 ''' Whenever we want to modify the data that Learning Log manages,
 we’ll follow these three steps: modify models.py, call makemigrations on
 learning_logs, and tell Django to migrate the project '''
@@ -35,3 +50,8 @@ identical to the learning_logs app '''
 # >>> for topic in Topic.objects.all():
 # ... print(topic, topic.owner)
 '''Print the topics with their associated owner'''
+
+# (ll_env)learning_log$ pip freeze > requirements.txt
+'''The freeze command tells pip to write the names of all the packages
+currently installed in the project into the file requirements.txt. Open
+requirements.txt to see the packages and version numbers installed'''

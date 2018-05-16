@@ -23,7 +23,7 @@ called 0001_initial.py. This migration will create a table for the model Topic
 in the database. Now we’ll apply this migration and have Django modify the database
 for us:'''
 
-### python manage.py migrate
+### python mananage.py migrate
 ''' Whenever we want to modify the data that Learning Log manages,
 we’ll follow these three steps: modify models.py, call makemigrations on
 learning_logs, and tell Django to migrate the project '''
